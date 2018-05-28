@@ -3,7 +3,7 @@ import signal
 import sys
 import requests
 import threading
-import queue
+import queue # 用Python2.7的时候这里改为 import Queue
 import time
 from bs4 import BeautifulSoup
 
@@ -79,7 +79,7 @@ def main():
     username = sys.argv[1]
 
     NUM_WORKERS = 10
-    q = queue.Queue()
+    q = queue.Queue() # Python2.7这里改为 q = Queue.Queue()
     # 修改这里的 username
     q.put(username)
 
